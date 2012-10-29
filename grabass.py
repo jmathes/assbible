@@ -7,12 +7,13 @@ bibledir = os.path.join(os.path.dirname(__file__), "bible")
 asslines = {}
 asscounts = {}
 
-ass_re = re.compile(r"\b[Aa][Ss][Ss]\b")
+ass_re = re.compile(r"\b[Aa][Ss][Ss]\b|\b[Aa][Ss][Ss][Ee][Ss]\b")
 assert ass_re.search("ass")
 assert ass_re.search("Ass")
 assert ass_re.search("aSS")
 assert ass_re.search("aSS")
 assert ass_re.search(" ass ")
+assert ass_re.search(" asses ")
 assert ass_re.search("dumb ass")
 assert ass_re.search("Rejoice greatly, O daughter of Zion; shout, O daughter of Jerusalem: behold, thy King cometh unto thee: he is just, and having salvation; lowly, and riding upon an ass, and upon a colt the foal of an ass.")
 assert not ass_re.search("dick")
